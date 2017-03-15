@@ -8,9 +8,9 @@
     "build:watch": "webpack --config config/webpack.config.js --progress --profile --watch",
     "build": "webpack --config config/webpack.config.js --progress --profile",
     "start": "npm run build && electron ./",
-    "package": "electron-packager ./ --all --asar --ignore \"(\\.git.*|config|dist|node_modules|src)\" --out dist/ --overwrite --icon=res/tray-icon.png --version-string.ProductName=\"Electron Click Counter\"",
-    "package:native": "electron-packager ./ --asar --ignore \"(\\.git.*|config|dist|node_modules|src)\" --out dist/ --overwrite --icon=res/tray-icon.png --version-string.ProductName=\"Electron Click Counter\"",
-    "distribute": "npm run build && npm run package"
+    "package:all": "electron-packager ./ --all --asar --ignore \"(\\.git.*|config|dist|node_modules|src)\" --out dist/ --overwrite --icon=res/tray-icon.png --version-string.ProductName=\"Electron Click Counter\"",
+    "package": "electron-packager ./ --asar --ignore \"(\\.git.*|config|dist|node_modules|src)\" --out dist/ --overwrite --icon=res/tray-icon.png --version-string.ProductName=\"Electron Click Counter\"",
+    "distribute": "npm run build && npm run package:all"
   },
   "author": "",
   "license": "ISC",
