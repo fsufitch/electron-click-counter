@@ -1,0 +1,9 @@
+<h1> Click Counter! </h1>
+
+<p [hidden]="!(counter$ | async)"> The button below has been clicked <strong>{{counter$ | async}} time(s)</strong>.</p>
+
+<p [hidden]="!!(counter$ | async)"> The button below has not yet been clicked.</p>
+
+<p>
+  <button (click)="clicked()">Click me!</button>
+</p>

@@ -1,0 +1,44 @@
+{
+  "name": "electron-click-counter",
+  "version": "1.0.0",
+  "productName": "Electron Click Counter",
+  "description": "Electron Click Counter",
+  "main": "bundles/app-main.bundle.js",
+  "scripts": {
+    "build:watch": "webpack --config config/webpack.config.js --progress --profile --watch",
+    "build": "webpack --config config/webpack.config.js --progress --profile",
+    "start": "npm run build && electron ./",
+    "package": "electron-packager ./ --all --asar --ignore \"(\\.git.*|config|dist|node_modules|src)\" --out dist/ --overwrite --icon=res/tray-icon.png --version-string.ProductName=\"Electron Click Counter\"",
+    "package:native": "electron-packager ./ --asar --ignore \"(\\.git.*|config|dist|node_modules|src)\" --out dist/ --overwrite --icon=res/tray-icon.png --version-string.ProductName=\"Electron Click Counter\"",
+    "distribute": "npm run build && npm run package"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/electron": "^1.4.33",
+    "@types/node": "^7.0.8",
+    "awesome-typescript-loader": "^3.1.2",
+    "css-loader": "^0.25.0",
+    "css-to-string-loader": "^0.1.2",
+    "electron": "^1.6.2",
+    "electron-packager": "^8.5.2",
+    "file-loader": "^0.10.1",
+    "html-loader": "^0.4.5",
+    "node-sass": "^4.0.0",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.3",
+    "typescript": "~2.1.4",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "@angular/common": "^2.4.9",
+    "@angular/compiler": "^2.4.9",
+    "@angular/core": "^2.4.9",
+    "@angular/platform-browser": "^2.4.9",
+    "@angular/platform-browser-dynamic": "^2.4.9",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.0.1",
+    "zone.js": "^0.7.2"
+  }
+}
